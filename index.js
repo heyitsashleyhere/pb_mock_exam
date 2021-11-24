@@ -86,7 +86,6 @@ function polygonType2(...sides){
 // Rock and Roll //////////////////////////////////////////////////
 const rockAndRoll = emoji => emoji === "🎸" ? 'rock' :
 'roll';
-console.log(rockAndRoll('🥁'));
 
 //  Looping ///////////////////////////////////////////////////////
 function powerOutput() {
@@ -95,6 +94,15 @@ function powerOutput() {
         str.push([i]**[i])
     }
     return str.join(' ')
+}
+
+// using trim
+function powerOutput2() {
+    let str = '';
+    for (let i = 1; i<=6; i++){
+        str += ' '+(i**i)
+    }
+    return str.trim();
 }
 
 //  Problem solving ///////////////////////////////////////////////////////
@@ -109,6 +117,30 @@ function secretSanta(str){
     return count
 }
 
-console.log(secretSanta("E.T. phone home" ));
+function secretSanta2(str){
+    str = str.toLowerCase()
+    let hoCount = (str.split('ho')).length-1
+    return hoCount
+}
+
+//to understand what split method returns:
+console.log("hello henrik".split('he'));
+
+// const object = [1,2,3,4,5]
+// object.sum = function (){
+//     let result =0 
+//     for(let i = 0; i < this.length; i++){
+//     result += this[i]}
+//     return result
+//   }
+  
+//   for (const charKey in object) {
+//     console.log(`${charKey}: ${object[charKey]}`);
+//   }
+  
+//   console.log(object.sum())
+  
+//   console.log(object.length)
+
 // DO NOT EDIT below this line - This will result in an automatic fail
 module.exports = {hasDoubleVowels, isMultipleOfNine, polygonType, rockAndRoll, powerOutput, secretSanta};
